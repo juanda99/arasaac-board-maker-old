@@ -1,6 +1,7 @@
 import { ReactChild } from 'react'
 import { useIntl } from 'react-intl'
 import Head from 'next/head'
+import Container from '@mui/material/Container'
 import Nav from './Nav'
 
 interface LayoutProps {
@@ -31,7 +32,7 @@ export default function Layout({ title, description, children }: LayoutProps) {
       <header>
         <Nav />
       </header>
-      {children}
+      <Container maxWidth="sm">{children}</Container>
     </>
   )
 }
