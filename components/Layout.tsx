@@ -3,6 +3,7 @@ import { useIntl } from 'react-intl'
 import Head from 'next/head'
 import Container from '@mui/material/Container'
 import Nav from './Nav'
+import Sidebar from './Sidebar'
 
 interface LayoutProps {
   title?: string
@@ -29,10 +30,14 @@ export default function Layout({ title, description, children }: LayoutProps) {
             })}
         </title>
       </Head>
-      <header>
-        <Nav />
-      </header>
-      <Container maxWidth="sm">{children}</Container>
+
+      <Sidebar />
+      <Container maxWidth="sm">
+        <header>
+          <Nav />
+        </header>
+        {children}
+      </Container>
     </>
   )
 }
